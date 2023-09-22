@@ -1,0 +1,1 @@
+pandoc -f markdown -t html5 -s file1.md -o test.html --template=template.html --metadata title="test"

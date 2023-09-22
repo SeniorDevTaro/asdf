@@ -1,0 +1,625 @@
+<!DOCTYPE html>
+
+<html lang="en" xml:lang="en">
+
+<head>
+
+  <meta charset="utf-8">
+  <meta name="generator" content="quarto-1.4.376">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+
+  <title>$entire-title$</title>
+  <style class="anchorjs"></style>
+  <style>
+
+    div.columns {
+      display: flex;
+      gap: min(4vw, 1.5em);
+    }
+
+    div.column {
+      flex: auto;
+      overflow-x: auto;
+    }
+
+    div.hanging-indent {
+      margin-left: 1.5em;
+      text-indent: -1.5em;
+    }
+
+    ul.task-list {
+      list-style: none;
+    }
+
+    ul.task-list li input[type="checkbox"] {
+      width: 0.8em;
+      margin: 0 0.8em 0.2em -1em;
+      vertical-align: middle;
+    }
+
+    /* CSS for syntax highlighting */
+
+    pre.numberSource code {
+      counter-reset: source-line 0;
+    }
+
+    pre.numberSource code>span {
+      position: relative;
+      left: -4em;
+      counter-increment: source-line;
+    }
+
+    pre.numberSource code>span>a:first-child::before {
+      content: counter(source-line);
+      position: relative;
+      left: -1em;
+      text-align: right;
+      vertical-align: baseline;
+      border: none;
+      display: inline-block;
+      -webkit-touch-callout: none;
+      -webkit-user-select: none;
+      -khtml-user-select: none;
+      -moz-user-select: none;
+      -ms-user-select: none;
+      user-select: none;
+      padding: 0 4px;
+      width: 4em;
+    }
+
+    pre.numberSource {
+      margin-left: 3em;
+      padding-left: 4px;
+    }
+
+  </style>
+
+  <script src="./assets/section.js"></script>
+  <link href="./assets/tippy.css" rel="stylesheet">
+  <link href="./assets/section-syntax-highlighting.css" rel="stylesheet"
+    id="quarto-text-highlighting-styles">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css">
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
+  <link href="./assets/bootstrap.min.css" rel="stylesheet" id="quarto-bootstrap" data-mode="light">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+
+  <link rel="stylesheet" href="./assets/styles.css">
+ 
+</head>
+
+<body class="nav-sidebar floating nav-fixed quarto-light" data-bs-offset="64" style="padding-top: 64px;">
+
+  <header id="quarto-header" class="headroom fixed-top headroom--top headroom--not-bottom">
+    <nav class="navbar navbar-expand-lg navbar-dark ">
+      <div class="navbar-container container-fluid">
+        <div class="navbar-brand-container mx-auto">
+          <a href="#" class="navbar-brand navbar-brand-logo">
+            <img src="./assets/logo.png" alt="Quarto logo." class="navbar-logo">
+          </a>
+        </div>
+
+        <div class="collapse navbar-collapse" id="navbarCollapse">
+          <ul class="navbar-nav navbar-nav-scroll me-auto">
+            $for(right-navigation-items)$
+            <li class="nav-item">
+              <a class="nav-link" href="#">
+                <span class="text-dark">$right-navigation-items$</span></a>
+            </li>
+            $endfor$
+            <li class="nav-item dropdown">
+              <a class="nav-link dropdown-toggle" href="#"
+                id="nav-menu-help" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                <span class="text-dark">Help</span>
+                <i class="bi bi-arrow-left-short"></i>
+              </a>
+              <ul class="dropdown-menu" aria-labelledby="nav-menu-help">
+                $for(right-navigation-help-items)$
+                <li>
+                  <a class="dropdown-item" href="#"><i class="bi bi-bug"
+                      role="img">
+                    </i>
+                    <span class="dropdown-text">$right-navigation-help-items$</span></a>
+                </li>
+                $endfor$
+              </ul>
+            </li>
+          </ul>
+        </div> <!-- /navcollapse -->
+       
+      </div> <!-- /container-fluid -->
+    </nav>
+    <nav class="quarto-secondary-nav">
+      <div class="container-fluid d-flex">
+        <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse"
+          data-bs-target="#quarto-sidebar,#quarto-sidebar-glass" aria-controls="quarto-sidebar" aria-expanded="false"
+          aria-label="Toggle sidebar navigation"
+          onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+          <i class="bi bi-layout-text-sidebar-reverse"></i>
+        </button>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb">
+          <ol class="breadcrumb">
+            <li class="breadcrumb-item"><a href="#">Guide</a></li>
+            <li class="breadcrumb-item"><a href="">Computations</a></li>
+            <li class="breadcrumb-item"><a href="">Using Python</a></li>
+          </ol>
+        </nav>
+        <a class="flex-grow-1" role="button" data-bs-toggle="collapse"
+          data-bs-target="#quarto-sidebar,#quarto-sidebar-glass" aria-controls="quarto-sidebar" aria-expanded="false"
+          aria-label="Toggle sidebar navigation"
+          onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+        </a>
+      </div>
+    </nav>
+  </header>
+  <!-- content -->
+  <div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article page-navbar"
+    style="min-height: calc(100vh - 127px);">
+    <!-- sidebar -->
+    <nav id="quarto-sidebar" class="sidebar collapse collapse-horizontal sidebar-navigation floating overflow-auto"
+      style="top: 64px; max-height: calc(100vh - 64px);">
+      <div class="sidebar-menu-container">
+        <ul class="list-unstyled mt-1">
+          <li class="sidebar-item sidebar-item-section">
+            <div class="sidebar-item-container">
+              <a href="#" class="sidebar-item-text sidebar-link">
+                <span class="text-dark">Guide</span></a>
+              <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse"
+                data-bs-target="#quarto-sidebar-section-1" aria-expanded="true" aria-label="Toggle section">
+                <i class="bi bi-chevron-right ms-2"></i>
+              </a>
+            </div>
+            <ul id="quarto-sidebar-section-1" class="collapse list-unstyled sidebar-section depth1 show pl-1">
+              <li class="sidebar-item sidebar-item-section">
+                <div class="sidebar-item-container">
+                  <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse"
+                    data-bs-target="#quarto-sidebar-section-4" aria-expanded="true">
+                    <span class="text-dark">Computations</span></a>
+                  <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse"
+                    data-bs-target="#quarto-sidebar-section-4" aria-expanded="true" aria-label="Toggle section">
+                    <i class="bi bi-chevron-right ms-2 "></i>
+                  </a>
+                </div>
+                <ul id="quarto-sidebar-section-4" class="collapse list-unstyled sidebar-section depth2 show px-2">
+                  <li class="sidebar-item">
+                    <div class="sidebar-item-container">
+                      <a href=""
+                        class="sidebar-item-text sidebar-link active">
+                        <span class="text-dark">Using Python</span></a>
+                    </div>
+                  </li>
+                  <li class="sidebar-item">
+                    <div class="sidebar-item-container">
+                      <a href="" class="sidebar-item-text sidebar-link">
+                        <span class="text-dark">Using R</span></a>
+                    </div>
+                  </li>
+                </ul>
+              </li>
+            </ul>
+          </li>
+        </ul>
+      </div>
+    </nav>
+    <div id="quarto-sidebar-glass" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar,#quarto-sidebar-glass">
+    </div>
+    <!-- margin-sidebar -->
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar" style="top: 64px; max-height: calc(100vh - 64px);">
+      <nav id="TOC" role="doc-toc" class="toc-active">
+        <h2 id="toc-title">$right-sidebar-title$</h2>
+
+        <ul>
+          $for(right-sidebar-items)$
+          <li><a href="#$right-sidebar-items$" id="toc-$right-sidebar-items$"
+              class="nav-link" data-scroll-target="#$right-sidebar-items$">$right-sidebar-items$</a></li>
+          $endfor$
+        </ul>
+      </nav>
+    </div>
+    <!-- main -->
+    <main class="content" id="quarto-document-content">
+
+      <header id="title-block-header" class="quarto-title-block default">
+        <nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb">
+          <ol class="breadcrumb">
+            <li class="breadcrumb-item"><a href="">Guide</a></li>
+            <li class="breadcrumb-item"><a href="">Computations</a></li>
+            <li class="breadcrumb-item"><a href="">Using Python</a></li>
+          </ol>
+        </nav>
+        <div class="quarto-title">
+          <h1 class="title">Using Python</h1>
+        </div>
+
+      </header>
+
+
+
+      <section id="overview" class="level2">
+        <h2 class="anchored" data-anchor-id="overview">Overview<a class="anchorjs-link " aria-label="Anchor"
+            data-anchorjs-icon="" href="#overview"
+            style="font: 1em / 1 anchorjs-icons; margin-left: 0.1875em; padding-right: 0.1875em; padding-left: 0.1875em;"></a>
+        </h2>
+        <p>Quarto supports executable Python code blocks within markdown. This allows you to create fully reproducible
+          documents and reports—the Python code required to produce your output is part of the document itself, and is
+          automatically re-run whenever the document is rendered.</p>
+        <p>If you have Python and the <code>jupyter</code> package installed then you have all you need to render
+          documents that contain embedded Python code (if you don’t, we’ll cover this in the <a
+            href="#installation">installation</a> section below). Next,
+          we’ll cover the basics of creating and rendering documents with Python code blocks.</p>
+        <section id="code-blocks" class="level3">
+          <h3 class="anchored" data-anchor-id="code-blocks">Code Blocks<a class="anchorjs-link " aria-label="Anchor"
+              data-anchorjs-icon="" href="#code-blocks"
+              style="font: 1em / 1 anchorjs-icons; margin-left: 0.1875em; padding-right: 0.1875em; padding-left: 0.1875em;"></a>
+          </h3>
+          <p>Code blocks that use braces around the language name (e.g.&nbsp;<code>```{python}</code>) are executable,
+            and will be run by Quarto during render. Here is a simple example:</p>
+
+          <p>You’ll note that there are some special comments at the top of the code block. These are cell level options
+            that make the figure <a
+              href="">cross-referenceable</a>.</p>
+          <p>This document would result in the following rendered output:</p>
+          <div id="fig-539a35d47e664c97a50115a146a7f1bd-1" class="border quarto-figure quarto-figure-center anchored"
+            alt="Example output where header reads: matplotlib demo, the body reads: For a demonstration of a line plot on a polar axis, see Figure 1. Below the body text is a toggleable field to reveal the code, and the Figure 1 image with a caption that reads: Figure 1: A line plot on a polar axis.">
+
+            <a class="anchorjs-link " aria-label="Anchor" data-anchorjs-icon=""
+              href="#fig-539a35d47e664c97a50115a146a7f1bd-1"
+              style="font: 1em / 1 anchorjs-icons; margin-left: 0.1875em; padding-right: 0.1875em; padding-left: 0.1875em;"></a>
+          </div>
+          <p>You can produce a wide variety of output types from executable code blocks, including plots, tabular output
+            from data frames, and plain text output (e.g.&nbsp;printing the results of statistical summaries).</p>
+          <p>There are many options which control the behavior of code execution and output, you can read more about
+            them in the article on <a href="">Execution
+              Options</a>.</p>
+        </section>
+        <section id="rendering" class="level3">
+          <h3 class="anchored" data-anchor-id="rendering">Rendering<a class="anchorjs-link " aria-label="Anchor"
+              data-anchorjs-icon="" href="#rendering"
+              style="font: 1em / 1 anchorjs-icons; margin-left: 0.1875em; padding-right: 0.1875em; padding-left: 0.1875em;"></a>
+          </h3>
+          <p>Quarto will automatically run computations in any markdown document that contains executable code blocks.
+            For example, the example shown above might be rendered to various formats with:</p>
+          <p>The <code>render</code> command will render all formats listed in the document YAML. If no formats are
+            specified, then it will render to HTML. You can also provide the <code>--to</code> argument to target a
+            specific format.</p>
+          <p>Quarto can also render any Jupyter notebook (.ipynb):</p>
+      
+          <p>Note that the target file (in this case <code>document.qmd</code>) should always be the very first command
+            line argument.</p>
+          <p>Note that when rendering an .ipynb Quarto will not execute the cells within the notebook by default (the
+            presumption being that you already executed them while editing the notebook). If you want to execute the
+            cells you can pass the <code>--execute</code> flag to render:</p>
+         
+        </section>
+      </section>
+      <section id="installation" class="level2">
+        <h2 class="anchored" data-anchor-id="installation">Installation<a class="anchorjs-link " aria-label="Anchor"
+            data-anchorjs-icon="" href="#installation"
+            style="font: 1em / 1 anchorjs-icons; margin-left: 0.1875em; padding-right: 0.1875em; padding-left: 0.1875em;"></a>
+        </h2>
+        <p>If you already have Python 3 and Jupyter installed in your environment, then you should have everything
+          required to render Jupyter notebooks with Python kernels.</p>
+        <p>If you don’t yet have Python 3 on your system, we recommend you install a version using the standard
+          installer from <a href="" class="uri"></a>.
+        </p>
+        <p>If you are in a fresh Python 3 environment, installing the <code>jupyter</code> package will provide
+          everything required to execute Jupyter kernels with Quarto:</p>
+        <table class="table">
+          <colgroup>
+            <col style="width: 20%">
+            <col style="width: 54%">
+          </colgroup>
+          <thead>
+            <tr class="header">
+              <th>Pkg. Manager</th>
+              <th>Command</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr class="odd">
+              <td>Pip<br>
+                (Mac/Linux)</td>
+              <td>
+                
+              </td>
+            </tr>
+            <tr class="even">
+              <td>Pip<br>
+                (Windows)</td>
+              <td>
+                
+              </td>
+            </tr>
+            <tr class="odd">
+              <td>Conda</td>
+              <td>
+                
+              </td>
+            </tr>
+          </tbody>
+        </table>
+        <p>You can verify that Quarto is configured correctly for Jupyter with:</p>
+        
+        <p>Quarto will select a version of Python using the <a
+            href="">Python Launcher</a> on
+          Windows or system <code>PATH</code> on MacOS and Linux. You can override the version of Python used by Quarto
+          by setting the <code>QUARTO_PYTHON</code> environment variable.</p>
+      </section>
+      <section id="workflow" class="level2">
+        <h2 class="anchored" data-anchor-id="workflow">Workflow<a class="anchorjs-link " aria-label="Anchor"
+            data-anchorjs-icon="" href="#workflow"
+            style="font: 1em / 1 anchorjs-icons; margin-left: 0.1875em; padding-right: 0.1875em; padding-left: 0.1875em;"></a>
+        </h2>
+        <p>You can author Quarto documents that include Python code using any text or notebook editor. No matter what
+          editing tool you use, you’ll always run <code>quarto preview</code> first to setup a live preview of changes
+          in your document. Live preview is available for both HTML and PDF output. For example:</p>
+       
+        <p>Note that when rendering an <code>.ipynb</code> Quarto <strong>will not</strong> execute the cells within the
+          notebook by default (the presumption being that you already executed them while editing the notebook). If you
+          want to execute the cells you can pass the <code>--execute</code> flag to render:</p>
+       
+        <p>You can also specify this behavior within the notebook’s YAML front matter:</p>
+
+      </section>
+      <section id="embed-notebooks" class="level2">
+        <h2 class="anchored" data-anchor-id="embed-notebooks">Embed Notebooks<a class="anchorjs-link "
+            aria-label="Anchor" data-anchorjs-icon=""
+            href="#embed-notebooks"
+            style="font: 1em / 1 anchorjs-icons; margin-left: 0.1875em; padding-right: 0.1875em; padding-left: 0.1875em;"></a>
+        </h2>
+        <p>In addition to including executable Python code chunks in a Quarto document, you can also embed cells from an
+          external Jupyter Notebook (<code>.ipynb</code>). See <a
+            href="">Embedding Jupyter Notebook Cells</a> for more
+          details.</p>
+      </section>
+      <section id="vs-code" class="level2">
+        <h2 class="anchored" data-anchor-id="vs-code">VS Code<a class="anchorjs-link " aria-label="Anchor"
+            data-anchorjs-icon="" href="#vs-code"
+            style="font: 1em / 1 anchorjs-icons; margin-left: 0.1875em; padding-right: 0.1875em; padding-left: 0.1875em;"></a>
+        </h2>
+        <p>The <a href="">Quarto Extension</a> for VS
+          Code provides a variety of tools for working with <code>.qmd</code> files in VS Code. The extension integrates
+          directly with the <a href="">Python
+            Extension</a> to provide the following Python-specific capabilities:</p>
+        <ol type="1">
+          <li>Code completion</li>
+          <li>Cell execution</li>
+          <li>Contextual help</li>
+        </ol>
+        <p>You can install the VS Code extension by searching for ‘quarto’ in the extensions panel or from the <a
+            href="">extension marketplace</a>.</p>
+        <p>You can also use the VS Code notebook editor to create Python notebooks that you will render with Quarto. The
+          next section discusses using notebooks with Quarto in the context of Jupyter Lab, but the same concepts apply
+          to VS Code.</p>
+      </section>
+      <section id="jupyter-lab" class="level2">
+        <h2 class="anchored" data-anchor-id="jupyter-lab">Jupyter Lab<a class="anchorjs-link " aria-label="Anchor"
+            data-anchorjs-icon="" href="#jupyter-lab"
+            style="font: 1em / 1 anchorjs-icons; margin-left: 0.1875em; padding-right: 0.1875em; padding-left: 0.1875em;"></a>
+        </h2>
+        <p>We could convert the simple <code>document.qmd</code> we used as an example above to a Jupyter notebook using
+          the <code>quarto convert</code> command. For example:</p>
+       
+        <p>If we open this notebook in Jupyter Lab and execute the cells, here is what we see:</p>
+        
+        <p>Note that there are three different types of cell here:</p>
+        <ol type="1">
+          <li>The YAML document options at the top are in a <strong>Raw</strong> cell.</li>
+          <li>The heading and explanation are in a <strong>Markdown</strong> cell.</li>
+          <li>The Python code and its output are in a <strong>Code</strong> cell.</li>
+        </ol>
+        <p>When working in a Jupyter notebook, you can use <code>quarto preview</code> to provide a live preview of your
+          rendered document:</p>
+        
+        <p>The preview will be updated every time you save the notebook in Jupyter Lab.</p>
+      </section>
+      <section id="caching" class="level2">
+        <h2 class="anchored" data-anchor-id="caching">Caching<a class="anchorjs-link " aria-label="Anchor"
+            data-anchorjs-icon="" href="#caching"
+            style="font: 1em / 1 anchorjs-icons; margin-left: 0.1875em; padding-right: 0.1875em; padding-left: 0.1875em;"></a>
+        </h2>
+        <p><a href="">Jupyter Cache</a> enables you to cache all of the
+          cell outputs for a notebook. If any of the cells in the notebook change then all of the cells will be
+          re-executed.</p>
+        <p>To use Jupyter Cache you’ll want to first install the <code>jupyter-cache</code> package:</p>
+        <table class="table">
+          <colgroup>
+            <col style="width: 26%">
+            <col style="width: 66%">
+          </colgroup>
+          <thead>
+            <tr class="header">
+              <th>Platform</th>
+              <th>Command</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr class="odd">
+              <td>Mac/Linux</td>
+              <td>
+                
+              </td>
+            </tr>
+            <tr class="even">
+              <td>Windows</td>
+              <td>
+                
+              </td>
+            </tr>
+          </tbody>
+        </table>
+        <p>To enable the cache for a document, add the <code>cache</code> option. For example:</p>
+      
+        <p>You can also specify caching at the project level. For example, within a project file:</p>
+       
+        <p>Note that changes within a document that aren’t within code cells (e.g.&nbsp;markdown narrative) do not
+          invalidate the document cache. This makes caching a very convenient option when you are working exclusively on
+          the prose part of a document.</p>
+        <p>Jupyter Cache include a <code>jcache</code> command line utility that you can use to analyze and manage the
+          notebook cache. See the <a href="">Jupyter Cache</a>
+          documentation for additional details.</p>
+        <section id="rendering-1" class="level3">
+          <h3 class="anchored" data-anchor-id="rendering-1">Rendering<a class="anchorjs-link " aria-label="Anchor"
+              data-anchorjs-icon="" href="#rendering-1"
+              style="font: 1em / 1 anchorjs-icons; margin-left: 0.1875em; padding-right: 0.1875em; padding-left: 0.1875em;"></a>
+          </h3>
+          <p>You can use <code>quarto render</code> command line options to control caching behavior without changing
+            the document’s code. Use options to force the use of caching on all chunks, disable the use of caching on
+            all chunks (even if it’s specified in options), or to force a refresh of the cache even if it has not been
+            invalidated:</p>
+  
+        </section>
+        <section id="alternatives" class="level3">
+          <h3 class="anchored" data-anchor-id="alternatives">Alternatives<a class="anchorjs-link " aria-label="Anchor"
+              data-anchorjs-icon="" href="#alternatives"
+              style="font: 1em / 1 anchorjs-icons; margin-left: 0.1875em; padding-right: 0.1875em; padding-left: 0.1875em;"></a>
+          </h3>
+          <p>If you are using caching to mitigate long render-times, there are some alternatives you should consider
+            alongside caching.</p>
+          <section id="disabling-execution" class="level4">
+            <h4 class="anchored" data-anchor-id="disabling-execution">Disabling Execution<a class="anchorjs-link "
+                aria-label="Anchor" data-anchorjs-icon=""
+                href="#disabling-execution"
+                style="font: 1em / 1 anchorjs-icons; margin-left: 0.1875em; padding-right: 0.1875em; padding-left: 0.1875em;"></a>
+            </h4>
+            <p>If you are working exclusively with prose / markdown, you may want to disable execution entirely. Do this
+              by specifying the <code>enabled: false</code> execute option For example:</p>
+           
+            <p>Note that if you are authoring using Jupyter <code>.ipynb</code> notebooks (as opposed to plain-text
+              <code>.qmd</code> files) then this is already the default behavior: no execution occurs when you call
+              <code>quarto render</code> (rather, execution occurs as you work within the notebook).</p>
+          </section>
+          <section id="freezing-execution" class="level4">
+            <h4 class="anchored" data-anchor-id="freezing-execution">Freezing Execution<a class="anchorjs-link "
+                aria-label="Anchor" data-anchorjs-icon=""
+                href="#freezing-execution"
+                style="font: 1em / 1 anchorjs-icons; margin-left: 0.1875em; padding-right: 0.1875em; padding-left: 0.1875em;"></a>
+            </h4>
+            <p>If you are working within a project and your main concern is the cumulative impact of rendering many
+              documents at once, consider using the <code>freeze</code> option.</p>
+            <p>You can use the <code>freeze</code> option to denote that computational documents should never be
+              re-rendered during a global project render, or alternatively only be re-rendered when their source file
+              changes:</p>
+         
+            
+            <p>Note that <code>freeze</code> controls whether execution occurs during global project renders. If you do
+              an incremental render of either a single document or a project sub-directory then code is always executed.
+              For example:</p>
+            
+            <p>Learn more about using <code>freeze</code> with projects in the article on <a
+                href="">managing project execution</a>.</p>
+          </section>
+        </section>
+      </section>
+      <section id="kernel-selection" class="level2">
+        <h2 class="anchored" data-anchor-id="kernel-selection">Kernel Selection<a class="anchorjs-link "
+            aria-label="Anchor" data-anchorjs-icon=""
+            href="#kernel-selection"
+            style="font: 1em / 1 anchorjs-icons; margin-left: 0.1875em; padding-right: 0.1875em; padding-left: 0.1875em;"></a>
+        </h2>
+        <p>The Jupyter kernel used by Quarto is determined using the <code>jupyter</code> metadata option. For example,
+          to use the <a href="">Xeus Python</a> kernel, do this:</p>
+       
+        <p>Note that you can also provide a full <code>kernelspec</code>, for example:</p>
+       
+        <p>If no Jupyter kernel is specified, then the kernel is determined by finding an available kernel that supports
+          the language of the first executable code block found within the file (e.g.&nbsp;<code>```{python}</code>).
+        </p>
+        <div class="callout callout-style-default callout-important callout-titled">
+          <div class="callout-header d-flex align-content-center">
+            <div class="callout-icon-container">
+              <i class="callout-icon"></i>
+            </div>
+            <div class="callout-title-container flex-fill">
+              Kernels from Conda
+            </div>
+          </div>
+          <div class="callout-body-container callout-body">
+            <p>If you are using a kernel that is contained within an external conda environment you need to take an
+              extra step to make sure it is recognized by Quarto. Please follow the instructions here to make conda
+              managed kernels available:</p>
+           
+            <p>Note that this step is not required if you are merely using conda with Quarto. It applies to using
+              kernels other than the default Python kernel that happen to be installed within a conda environment
+              separate from the one you are using.</p>
+          </div>
+        </div>
+      </section>
+      <section id="kernel-daemon" class="level2">
+        <h2 class="anchored" data-anchor-id="kernel-daemon">Kernel Daemon<a class="anchorjs-link " aria-label="Anchor"
+            data-anchorjs-icon="" href="#kernel-daemon"
+            style="font: 1em / 1 anchorjs-icons; margin-left: 0.1875em; padding-right: 0.1875em; padding-left: 0.1875em;"></a>
+        </h2>
+        <p>To mitigate the start-up time for the Jupyter kernel Quarto keeps a daemon with a running Jupyter kernel
+          alive for each document. This enables subsequent renders to proceed immediately without having to wait for
+          kernel start-up.</p>
+        <p>The purpose of the daemon is to make render more responsive during interactive sessions. Accordingly, no
+          daemon is created when documents are rendered without an active tty or when they are part of a batch rendering
+          (e.g.&nbsp;in a <a href="">Quarto Project</a>).</p>
+        <p>Note that Quarto does not use a daemon by default on Windows (as some Windows systems will not allow the
+          socket connection required by the daemon).</p>
+        <p>You can customize this behavior using the <code>daemon</code> execution option. Set it to <code>false</code>
+          to prevent the use of a daemon, or set it to a value (in seconds) to determine the period after which the
+          daemon will timeout (the default is 300 seconds). For example:</p>
+      
+        
+        <p>Note that if you want to use a daemon on Windows you need to enable it explicitly:</p>
+     
+        <section id="command-line" class="level3">
+          <h3 class="anchored" data-anchor-id="command-line">Command Line<a class="anchorjs-link " aria-label="Anchor"
+              data-anchorjs-icon="" href="#command-line"
+              style="font: 1em / 1 anchorjs-icons; margin-left: 0.1875em; padding-right: 0.1875em; padding-left: 0.1875em;"></a>
+          </h3>
+          <p>You can also control use of the Jupyter daemon using the following command line options:</p>
+        
+          <p>You can also force an existing daemon to restart using the <code>--execute-daemon-restart</code> command
+            line flag:</p>
+          
+          <p>This might be useful if you suspect that the re-use of notebook sessions is causing an error.</p>
+          <p>Finally, you can print extended debugging information about daemon usage (startup, shutdown, connections,
+            etc.) using the <code>--execute-debug</code> flag:</p>
+          
+
+        </section>
+      </section>
+
+    </main> <!-- /main -->
+
+    <nav class="page-navigation">
+      <div class="nav-page nav-page-previous">
+        <a href="" class="pagination-link">
+          <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text">$bottom-previous-name$</span>
+        </a>
+      </div>
+      <div class="nav-page nav-page-next">
+        <a href="" class="pagination-link">
+          <span class="nav-page-text">$bottom-next-name$</span> <i class="bi bi-arrow-right-short"></i>
+        </a>
+      </div>
+    </nav>
+  </div> <!-- /content -->
+  <footer class="footer">
+    <div class="nav-footer">
+      
+      <div class="nav-footer-center">
+        <span>$footer-content$</span>
+      </div>
+
+    </div>
+  </footer>
+
+
+
+
+  <deepl-input-controller><template shadowrootmode="open">
+      <link rel="stylesheet" href="chrome-extension://cofdbpoegempjloogbagkncekinflcnj/build/content.css">
+      <div>
+        <div class="dl-input-translation-container svelte-ju4595">
+          <div></div>
+        </div>
+      </div>
+    </template></deepl-input-controller>
+</body>
+
+
+</html>
